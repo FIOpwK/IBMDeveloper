@@ -8,5 +8,8 @@ public class Person {
 	private String eyeColor;
 	private String gender;
 	
+	public static void main(String[] args) {
+		System.out.println("Hello, Java!");
+	}
 	
 }
