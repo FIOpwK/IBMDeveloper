@@ -130,5 +130,13 @@ Two qualities differentiate the Java language from purely object-oriented langua
 
 The Java language does give you the tools necessary to follow sound OOP principles and produce sound object-oriented code. Because Java is not purely object-oriented, you must exercise discipline in how you write code — the language doesn't force you to do the right thing, so you must do it yourself.
 
+## Overloading methods
+When you create two methods with the same name but with different argument lists (that is, different numbers or types of parameters), you have an overloaded method. At runtime, the JRE decides which variation of your overloaded method to call, based on the arguments that were passed to it.
+
+## Overriding methods
+When a subclass provides its own implementation of a method that's defined on one of its parent classes, that's called method overriding.
+
+Two or more methods of the same name, but different signatures, are called overloaded methods. When you create a new version of a method in a subclass that is defined in a superclass, it's called method overriding.
+
 ## Conclusion
 In this tutorial, you learned about object-oriented programming and familiarized yourself with an IDE that helps you control your development environment.
