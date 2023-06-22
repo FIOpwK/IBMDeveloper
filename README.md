@@ -138,5 +138,61 @@ When a subclass provides its own implementation of a method that's defined on on
 
 Two or more methods of the same name, but different signatures, are called overloaded methods. When you create a new version of a method in a subclass that is defined in a superclass, it's called method overriding.
 
+# Best coding practices
+ Before you continue on to more-advanced topics, this is a good moment to learn a few best coding practices. Read on for some essential pointers that can help you write cleaner, more maintainable Java code.
+
+## Keep classes small
+ It's not uncommon (and it's unfortunate) to see classes with 50 or 100 methods and a thousand lines or more of source. Some classes might be that large out of necessity, but most likely they need to be refactored. Refactoring is changing the design of existing code without changing its results. I recommend that you follow this best practice.
+
+In general, a class represents a conceptual entity in your application, and a class's size should reflect only the functionality to do whatever that entity needs to do. Keep your classes tightly focused to do a small number of things and do them well.
+
+## Name methods carefully
+A good coding pattern when it comes to method names is the intention-revealing method-names pattern. This pattern is easiest to understand with a simple example. Which of the following method names is easier to decipher at a glance?
+
+- a()
+- computeInterest()
+
+The answer should be obvious, yet for some reason, programmers have a tendency to give methods (and variables, for that matter) small, abbreviated names. Certainly, a ridiculously long name can be inconvenient, but a name that conveys what a method does needn't be ridiculously long. Six months after you write a bunch of code, you might not remember what you meant to do with a method called ```compInt()```, but it's obvious that a method called ```computeInterest()```, well, probably computes interest.
+
+## Keep methods small
+Small methods are as preferable as small classes, for similar reasons. One idiom I try to follow is to keep the size of a method to one page as I look at it on my screen. This practice makes my application classes more maintainable. 
+
+If a method grows beyond one page, I refactor it. Eclipse has a wonderful set of refactoring tools. Usually, a long method contains subgroups of functionality bunched together. Take this functionality and move it to another method (naming it accordingly) and pass in parameters as needed.
+
+Limit each method to a single job. I've found that a method doing only one thing well doesn't usually take more than about 30 lines of code.
+
+Refactoring and the ability to write test-first code are the most important skills for new programmers to learn. If everybody were good at both, it would revolutionize the industry. If you become good at both, you will ultimately produce cleaner code and more-functional applications than many of your peers
+
+## Use comments
+Please, use comments. The people who follow along behind you (or even you, yourself, six months down the road) will thank you. You might have heard the old adage Well-written code is self-documenting, so who needs comments? I'll give you two reasons why I believe this adage is false:
+
+- Most code is not well written.
+- Try as we might, our code probably isn't as well written as we'd like to think.
+
+So, comment your code. Period.
+
+## Use a consistent style
+Coding style is a matter of personal preference, but I advise you to use standard Java syntax for braces:
+
+```Java
+public static void main(String[] args) {
+}
+```
+
+
+## Use built-in logging
+Before Java 1.4 introduced built-in logging, the canonical way to find out what your program was doing was to make a system call like this one:
+
+```Java
+public void someMethod() {
+  // Do some stuff...
+  // Now tell all about it
+  System.out.println("Telling you all about it:");
+  // Etc...
+}
+```
+The Java language's built-in logging facility is a better alternative (refer back to "Java language basics" in the "Your first Java class" section). I never use System.out.println() in my code, and I suggest you don't use it either. Another alternative is the commonly used log4j replacement library, part of the Apache umbrella project.
+
+
 ## Conclusion
 In this tutorial, you learned about object-oriented programming and familiarized yourself with an IDE that helps you control your development environment.
